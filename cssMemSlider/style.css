@@ -1,0 +1,32 @@
+.slider-wrapper {
+  width: 940px;
+  height: 470px;
+  margin: 50px auto;
+  position: relative;
+  margin-bottom: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.slider-container {
+  width: 940px;
+  height: 470px;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 400%;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.slides img {
+  float: left;
+  width: 25%;
+}
