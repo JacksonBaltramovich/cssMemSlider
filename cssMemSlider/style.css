@@ -1,21 +1,103 @@
-.slider-wrapper {
+#slider-wrapper {
   width: 940px;
-  height: 470px;
+  height: 800px;
   margin: 50px auto;
+  background: rgb(63, 51, 51);
+  overflow: hidden;
+}
+
+
+.dots {
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(50, 65, 206);
+  margin: 10px 10px 10px 10px;
   position: relative;
-  margin-bottom: 0px;
-  background: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: background ease-in-out .5s;
+  -moz-transition: background ease-in-out .5s;
+  -o-transition: background ease-in-out .5s;
+  transition: background ease-in-out .5s;
 }
 
-.slider-container {
-  width: 940px;
-  height: 470px;
-  margin-bottom: 0px;
-  overflow: hidden;
+.dots::after {
+  border: 1.5px solid rgb(63, 51, 51);
+  content: " ";
+  display: block;
+  height: 17px;
+  width: 17px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
 }
 
-.slides {
+
+
+#Slide1:checked ~ .slider_navigation .controls label:nth-of-type(1),
+#Slide2:checked ~ .slider_navigation .controls label:nth-of-type(2),
+#Slide3:checked ~ .slider_navigation .controls label:nth-of-type(3),
+#Slide4:checked ~ .slider_navigation .controls label:nth-of-type(4) {
+  background-color: #FFF;
+}
+
+
+#s1:hover,
+#s2:hover,
+#s3:hover,
+#s4:hover {
+  background-color: #FFF;
+}
+
+.inner-wrapper {
+  margin: 0 auto;
+  height: 41vw;
+  max-height: 800px;
+  width: 100%;
+}
+
+.control {
+  display: none;
+}
+
+#Slide1:checked ~ .overflow-wrapper {
+  margin-left: 0%;
+}
+
+#Slide2:checked ~ .overflow-wrapper {
+  margin-left: -100%;
+}
+
+#Slide3:checked ~ .overflow-wrapper {
+  margin-left: -200%;
+}
+
+#Slide4:checked ~ .overflow-wrapper {
+  margin-left: -300%;
+}
+
+#Slide1:checked + #s1 {
+  opacity: 1;
+}
+
+#Slide2:checked + #s2 {
+  opacity: 1;
+}
+
+#Slide3:checked + #s3 {
+  opacity: 1;
+}
+
+#Slide4:checked + #s4 {
+  opacity: 1;
+}
+
+.overflow-wrapper {
   width: 400%;
   height: 100%;
   overflow-y: hidden;
@@ -26,7 +108,36 @@
   transition: all 0.3s ease-in-out;
 }
 
-.slides img {
-  float: left;
+.slide img {
   width: 25%;
+  float: left;
+  height: 100%;
+}
+
+.title {
+  color: #FFF;
+  font-size: 20px;
+}
+
+
+.slider_navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.title_container {
+  width: 70%;
+  overflow: hidden;
+}
+
+.title_slider {
+  display: flex;
+  width: 400%;
+  height: 100%;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
 }
